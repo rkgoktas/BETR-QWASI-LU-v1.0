@@ -1,0 +1,9 @@
+## inital conditions for BETR-QWASI
+## first column: region-id
+## second column: compartment-id
+## third column: amount in mol
+## if this file contains no values, an uncontaminated environment at t=0 is assumed.
+##
+#1 1 1e-6
+#1 2 1e-6
+#1 3 1e-6

@@ -1,0 +1,33 @@
+#m: month      
+#r cell number
+#c1 compartment 1 upper ocean   
+#c2 compartment 2 lower ocean
+#c3 compartment 3 sediment
+#val1 value of emissions into upper ocean (mol/h)  
+#val2 value of emissions into lower ocean (mol/h)  
+#val3 value of emissions into sediment (mol/h)    
+#m r c1 c2 c3 val1 val2 val3
+1 1 1 2 3 2.52E-01 3.32E+00 0
+2 1 1 2 3 2.52E-01 3.32E+00 0
+3 1 1 2 3 2.52E-01 3.32E+00 0
+4 1 1 2 3 2.52E-01 3.32E+00 0
+5 1 1 2 3 3.99E+00 0 0
+6 1 1 2 3 3.99E+00 0 0
+7 1 1 2 3 3.99E+00 0 0
+8 1 1 2 3 3.99E+00 0 0
+9 1 1 2 3 3.99E+00 0 0
+10 1 1 2 3 3.99E+00 0 0
+11 1 1 2 3 2.52E-01 3.32E+00 0
+12 1 1 2 3 2.52E-01 3.32E+00 0
+1 2 1 2 3 2.50E-01 0 0
+2 2 1 2 3 2.50E-01 0 0
+3 2 1 2 3 2.50E-01 0 0
+4 2 1 2 3 2.50E-01 0 0
+5 2 1 2 3 2.56E-02 0 0
+6 2 1 2 3 2.56E-02 0 0
+7 2 1 2 3 2.56E-02 0 0
+8 2 1 2 3 2.56E-02 0 0
+9 2 1 2 3 2.56E-02 0 0
+10 2 1 2 3 2.56E-02 0 0
+11 2 1 2 3 2.50E-01 0 0
+12 2 1 2 3 2.50E-01 0 0

@@ -1,0 +1,25 @@
+#                
+# compartments_QWASI.txt contains the compartments considered by the model.        
+# It is possible to insert new compartments or comment out existing ones.    
+# Lines starting with '''#''' are comments. Lines are either comments or data.    
+# Beware of empty lines (particularly at the end of the file) !    
+#                
+# The first non-comment line contains the names of the variables.      
+# These names are used in the code  only change them if you know what you
+# are doing !             
+#                
+# Columns:               
+#                
+# ID : integer number of the compartment         
+# name : a description  must be valid Python dictionary key (no spaces etc.)  
+# temp_variable : the variable name that contains the temperature       
+# of the compartment (in seasonal_QWASI.txt)           
+# halflife_variable : variable name that contains the halflife of chemicals      
+# in the compartment : (in chemicals_QWASI.txt)          
+# EA_variable : variable name that contains activation energy of chemicals      
+# in the compartment : (in chemicals_QWASI.txt)          
+#                
+ID name temp_variable halflife_variable EA_variable                 
+1 upper_ocean tupperocean halflife_ocean EA_ocean
+2 lower_ocean tlowerocean halflife_ocean EA_ocean            
+3 sediment tsed halflife_sediment EA_sediment            

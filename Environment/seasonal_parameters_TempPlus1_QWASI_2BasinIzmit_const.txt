@@ -1,0 +1,45 @@
+# Lines starting with '#''' are comments. Comment lines must form a continuous        
+# block at the beginning of this file.             
+# The last comment line is not really a comment. It must contain the names of     
+# the variables that are used in the code.            
+# The data has to start in the following line.           
+#                   
+# List of variables:
+# 
+# CELL       : Cell number (1: Central Basin, 2: Eastern Basin)                                          
+# TS	     : timestep
+# tair2	     : temperature of lower air [K]
+# tupperocean: temperature of upper ocean [K]
+# tlowerocean: temperature of lower ocean [K]
+# tsed	     : temperature sediment surface [K]
+# h1	     : Average upper ocean compartment depth [m]
+# h	     : Average total ocean compartment depth [m]
+# perc8	     : percentage of ocean covered by Sea Ice [-]
+# Gup	     : water outflow rate from the upper ocean compartment [m3/h]
+# Glow	     : water outflow rate from the lower ocean compartment [m3/h]
+#                    
+#CELL TS tair2 tupperocean tlowerocean tsed h1 h perc8 Gup Glow
+1 1 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 2 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 3 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 4 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 5 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 6 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 7 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 8 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 9 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 10 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 11 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+1 12 289 289.75 289.15 289.15 17 70.59 0 4176000 5979600
+2 1 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 2 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 3 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 4 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 5 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 6 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 7 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 8 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 9 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 10 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 11 289 289.75 289.15 289.15 12 19.32 0 0 0
+2 12 289 289.75 289.15 289.15 12 19.32 0 0 0

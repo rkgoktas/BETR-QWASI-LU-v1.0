@@ -1,0 +1,19 @@
+#c1 cell1 ocean----|
+#-------------------------|from compartment ocean to neighbouring compartment ocean [m3/h]
+#c2 cell2 ocean----|   
+#m1: 1.month
+#m2: 2.month
+#m3: 3.month
+#m4: 4.month
+#m5: 5.month
+#m6: 6.month
+#m7: 7.month
+#m8: 8.month
+#m9: 9.month
+#m10: 10.month
+#m11: 11.month
+#m12: 12.month
+#c1 c2 m1 m2 m3 m4 m5 m6 m7 m8 m9 m10 m11 m12
+#2 2
+1 2 2642400 2642400 2642400 2642400 0 0 0 0 0 0 2642400 2642400 
+2 1 0 0 0 0 2871000 2871000 2871000 2871000 2871000 2871000 0 0

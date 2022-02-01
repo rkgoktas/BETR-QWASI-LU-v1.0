@@ -1,0 +1,55 @@
+#	Database	of	Chemicals												
+#	commentline	sstart	with	#'											
+#	Comments	must	form	continuous	block	at	the	the							
+#	The	last	comment	line	is	not	really	It	the	names					
+#	of	the	variables	used	in	the	code.	has	start	in	the	following			
+#															
+#															
+#	Parameters:														
+#															
+#	ID	:	unique	database	identifier										
+#	T0	:	standard	temperature	(K)										
+#	molmass	:	molecular	mass	(g/mol)										
+#	logKaw	:	partitioning	coefficient	air-water										
+#	logKow	:	partitioning	coefficient	octanol-water										
+#	logKoa	:	partitioning	coefficient	octanol-air										
+#	halflife_air	(h)													
+#	halflife_veg	(h)													
+#	halflife_freshwater	(h)													
+#	halflife_ocean	(h)													
+#	halflife_soil	(h)													
+#	halflife_sediment	(h)													
+#	DUoa	:	internal	energy	of	phase	change								
+#	DUow	:	internal	energy	of	phase	change								
+#	EA_air	:	activation	energy	in	air	(J/mol)								
+#	EA_veg	:	activation	energy	in	vegetation	(J/mol)								
+#	EA_freshwater	:	activation	energy	in	freashwater	(J/mol)								
+#	EA_ocean	:	activation	energy	in	ocean	water								
+#	EA_soil	:	activation	energy	in	soil	(J/mol)								
+#	EA_sediment	:	activation	energy	in	sediment	(J/mol)								
+#	notes	:	description												
+#															
+#ID Name T0 molmass logKaw logKow logKoa halflife_air halflife_ocean halflife_sediment DUoa DUow EA_air EA_ocean EA_sediment notes
+1 "NaP" 298.15 128.17 -1.72 3.39 5.19 17 170 5500 -54218.23046875 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+2 "AcNP" 298.15 152.19 -2.31 3.8 6.52 55 170 17000 -65916.7421875 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+3 "AcN" 298.15 154.21 -2.25 3.97 6.42 55 170 17000 -65037.15625 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+4 "Fl" 298.15 166.22 -2.42 4.14 6.81 55 550 17000 -68467.546875 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+5 "PhA" 298.15 178.23 -2.75 4.49 7.61 55 550 17000 -75504.25 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+6 "AN" 298.15 178.23 -2.69 4.63 7.63 55 550 17000 -75680.1640625 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+7 "FlA" 298.15 202.25 -3.23 4.98 8.8 550 1700 55000 -85971.3359375 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+8 "Py" 298.15 202.25 -3.27 5.06 8.79 550 1700 55000 -85883.375 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+9 "BaA" 298.15 228.29 -3.55 5.83 10.28 550 1700 55000 -98989.2265625 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+10 "Chy" 298.15 228.29 -3.75 5.67 10.3 550 1700 55000 -99165.1484375 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+11 "BbFlA" 298.15 252.31 -4.57 5.83 11.34 550 1700 55000 -108312.859375 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+12 "BkFlA" 298.15 252.31 -4.62 5.85 11.37 550 1700 55000 -108576.734375 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+13 "BaP" 298.15 252.31 -4.69 5.99 11.56 550 1700 55000 -62290 -25400 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal energies from Beyer et al. 2002, 941-953, ET&C.  Degradation half-lives extrapolated from Mackay half-life classes."
+14 "IP" 298.15 276.33 -4.85 6.53 12.43 550 1700 55000 -117900.3671875 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+15 "dBahA" 298.15 278.346 -5.239 6.75 11.779 550 1700 55000 -110000 -20000 10000 20000 20000 "Partitioning properties from EPI Suite; Duoa, DUow, Half-lives, EA values assumed."
+16 "BghiP" 298.15 276.33 -4.87 6.6 12.55 550 1700 55000 -118955.8671875 -20000 10000 20000 20000 "Partitioning properties from Ma et al. J. Chem. Eng. Data, 55, 819-825, 2010.  Internal estimated based on MacLeod et al. ES&T 41, 2827-2832, 2007.  Degradation half-lives extrapolated from Mackay half-life classes."
+17 "PCB-28" 298.15 257.5434 -1.93 5.92 7.86 550 17000 55000 -77600 -20000 0 30000 30000 "Partition coefficients and internal energies of phase change from Schenker et al. ES&T, 39, 8434-8441, 2005.  Degradation half-life in air extrapolated from Fig. 2 in Anderson & Hites.  Degradation in other media selected based on Wania & Daly and Mackay half-life classes. Revised with values of Lamon et al. 2009"
+18 "PCB-153" 298.15 360.8784 -2.13 7.31 9.45 5500 55000 55000 -91600 -20000 0 30000 30000 "Partition coefficients and internal energies of phase change from Schenker et al. ES&T, 39, 8434-8441, 2005.  Degradation half-life in air extrapolated from Fig. 2 in Anderson & Hites.  Degradation in other media selected based on Wania & Daly and Mackay half-life classes. Revised with values of Lamon et al. 2009"
+19 "BDE-47" 298.15 485.8 -3.12 6.53 10.4 265 4600 27720 -97000 -20000 10000 20000 20000 "Schenker et al, ES&T 42, 9244-9249, 2009."
+20 "BDE-99" 298.15 564.7 -3.37 7 11.3 456 8500 51000 -91000 -12000 10000 20000 20000 "Schenker et al, ES&T 42, 9244-9249, 2009."
+21 "BDE-153" 298.15 643.6 -3.68 7.36 12.1 1104 15700 93900 -98000 -21000 10000 20000 20000 "Schenker et al, ES&T 42, 9244-9249, 2009."
+22 "12347-PCDD" 298.15 356.4 -3.14 7.06 10.69 550 550 55000 -106500 -8800 10000 20000 20000 "Partitioning properties and internal energies of phase change from Aberg et al. J. Phys. Chem. Ref. Data, 37, 1997-2008, 2008.  Degradation half-lives selected based on Mackay degradation classes."
+23 "Dibenzo-p-furan" 298.15 168.2 -3.11 3.92 7.02 17 55 1700 -57300 -11100 10000 20000 20000 "Partitioning properties and internal energies of phase change from Aberg et al. J. Phys. Chem. Ref. Data, 37, 1997-2008, 2008.  Degradation half-lives selected based on Mackay degradation classes."

@@ -1,3 +1,4 @@
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
@@ -39,6 +40,6 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 ## Welcome to BETR-QWASI-LU-v1.0 website!
 
-You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](/pdf/BETR-QWASI-LU_documentation.pdf).
+You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/files/8186243/BETR-QWASI-LU_documentation.pdf).
 
 You may download BETR-QWASI-LU-v1.0 source code and environmental data sets from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/tree/main). 

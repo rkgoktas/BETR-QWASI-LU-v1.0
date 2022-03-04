@@ -35,3 +35,10 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+
+## Welcome to BETR-QWASI-LU-v1.0 website!
+
+You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](/pdf/Documentation_BETR_Research_3.0.pdf). https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/tree/main
+
+You may download BETR-QWASI-LU-v1.0 source code and environmental data sets from [here](https://github.com/rkgoktas/BETR-Research-3.0). https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/tree/main

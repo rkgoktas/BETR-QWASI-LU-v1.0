@@ -1,5 +1,5 @@
 
-# Welcome to BETR-QWASI-LU-v1.0 website!
+Welcome to BETR-QWASI-LU-v1.0 website!
 
 BETR-QWASI-LU-v1.0 is a spatially resolved QWASI model for vertically layered coastal waters with Uncertainty Analysis.
 

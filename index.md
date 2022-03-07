@@ -12,4 +12,5 @@ You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](http
 
 You may download BETR-QWASI-LU-v1.0 source code and environmental data sets from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/tree/main). 
 
-![Processes Diagram](https://user-images.githubusercontent.com/89611426/157018526-1a955635-da93-4281-8ade-8d97f8adf60b.jpg)
+
+![Processes Diagram_4300](https://user-images.githubusercontent.com/89611426/157031348-cf162385-af7b-48f7-846d-8c2e07aba343.jpg)

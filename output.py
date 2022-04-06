@@ -39,7 +39,7 @@ def write_output_summary(m, fn, nchemical, nrun, nchemdb, nseasonalparfile, ncon
     if not os.path.exists(os.path.dirname(fn)):
         os.mkdir(os.path.dirname(fn))    
     writer = csv.writer(open(fn, 'w'), delimiter = ' ')
-    writer.writerows([["BETR-Global 3.0"],
+    writer.writerows([["BETR-QWASI-LU v1.0"],
                       ['runID', nrun], 
                       ['seasfile', nseasonalparfile],
                       ['chemdata', nchemdb], 
@@ -187,13 +187,17 @@ def write_output_ss_QWASI(m, fn, units, cpk):     # parameter cpk added by HW
                                             *m.chemdict['molmass']\
                                             /mean(m.par['rhos7'],axis=1)\
                                             *1e9/1e6
-        if 'sed_ng_per_g' in units:
+        if 'sed_ng_per_g' in units: # dry sediment basis
             if c == 3:
                 out[c]['sed_ng_per_g']=m.ss_res[idx]*m.chemdict['molmass']*1e9/varr\
                                         /(mean(m.par['fs7'],axis=1)*mean(m.par['rhos7'],axis=1))\
                                         /1e3
+        if 'sed_mg_per_kg' in units: # dry sediment basis
+            if c == 3:
+                out[c]['sed_mg_per_kg']=m.ss_res[idx]*m.chemdict['molmass']*1e3/varr\
+                                        /(mean(m.par['fs7'],axis=1)*mean(m.par['rhos7'],axis=1))\
                                         
-    print("in write_output_ss: out =", out)
+    #print("in write_output_ss: out =", out)
             
     if not out:
         print("WARNING: empty output requested !\n")
@@ -281,14 +285,14 @@ def write_output_dyn(m, fn, units, netcdf, cpk):     # parameter cpk added by HW
                     outarray[t,c-1,:,:]=out[c][u][:,t].reshape(nlat,nlon) #12,24
             writenc(outarray, fnnc, True, True, 1, varname='V',unit=u)
             
-def write_output_dyn_QWASI(m, fn, units):     
+def write_output_dyn_QWASI(m, fn, units, cpk):     
     ''' Output for dynamic results for BETR-QWASI''' ## new function by RKG, SC, 10.12.2021
     nlat=int(sqrt(m.matdim/m.nocomp/2))                  # added by HW
     nlon=int(sqrt(m.matdim/m.nocomp/2)*2)                # added by HW
     out={}
     #print 'write_output_dyn: self.dyn_res:', type(m.dyn_res),m.dyn_res.shape # RKG, 03.07.2014
     timesteps=m.dyn_res.shape[1]
-    #print 'write_output_dyn: timesteps = ', timesteps # RKG, 03.07.2014
+    #print('write_output_dyn: timesteps = ', timesteps) # RKG, 03.07.2014
     periods=int((timesteps-1)/float(m.nots))
     if periods != (timesteps-1)/float(m.nots):
         sys.exit('timesteps of output {0:d} not multiple of '
@@ -312,8 +316,9 @@ def write_output_dyn_QWASI(m, fn, units):
             density = m.par['fp1']*m.par['rhop45'] + (1-m.par['fp1'])*m.par['rho45']
         if c == 2: # lower ocean compartment
             density = m.par['fp2']*m.par['rhop45'] + (1-m.par['fp2'])*m.par['rho45']
-        if c == 3: # sediment compartment
+        if c == 3: # sediment compartment (wet mass)
             density = m.par['fw7']*m.par['rho45'] + m.par['fs7']*m.par['rhos7']
+            #density = m.par['fs7']*m.par['rhos7']
         #print("in write_output_dyn_QWASI: density = ", density)
         density_arr = hstack((ones((idx.shape[0],1)), 
                              tile(density, (1,periods))))
@@ -340,7 +345,26 @@ def write_output_dyn_QWASI(m, fn, units):
         if 'mg_per_kg' in units:
             out[c]['mg_per_kg'] = m.dyn_res[idx]*m.chemdict['molmass']*1e3/(varr*density_arr)
             out[c]['mg_per_kg'][zerovolidx]=0
-        print("in write_output_dyn_QWASI: out = ", out)
+        if 'sed_ng_per_g' in units: # dry sediment basis
+            if c == 3:
+                out[c]['sed_ng_per_g']=m.dyn_res[idx]*m.chemdict['molmass']*1e9/varr\
+                                        /vstack(mean(m.par['fs7'],axis=1)*mean(m.par['rhos7'],axis=1))\
+                                        /1e3
+        if 'sed_mg_per_kg' in units: # dry sediment basis
+            if c == 3:
+                out[c]['sed_mg_per_kg']=m.dyn_res[idx]*m.chemdict['molmass']*1e3/varr\
+                                        /vstack(mean(m.par['fs7'],axis=1)*mean(m.par['rhos7'],axis=1))
+        #print("in write_output_dyn_QWASI: out = ", out)
+    if cpk:                          # condition added by HW
+        fncpk=fn+'_out.cpk'
+        #if not os.path.exists(os.path.dirname(fncpk)):
+            #os.mkdir(os.path.dirname(fncpk))
+        #else:
+        if os.path.exists(fncpk):
+            print(('Attention: overwriting %s\n') % (fncpk))
+        f=open(fncpk,'wb')
+        pickle.dump(out,f)
+        f.close()
     
     # plot the results
     from matplotlib import pyplot as plt
@@ -351,7 +375,8 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
-    plt.savefig("UpperOcean",dpi=300)
+    plt.tight_layout()
+    plt.savefig(fn+"UpperOcean",dpi=300)
     plt.show()
     # upper ocean compartment concentrations in mg/m3 (last simulation year)
     for i in range(m.nocells):
@@ -359,6 +384,7 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.title('Üst Deniz Kompartmanı (Son yıl)')
     plt.ylabel('Konsantrasyon (mg/m3)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
+    plt.tight_layout()
     plt.show()
     # lower ocean compartment concentrations in mg/m3
     for i in range(m.nocells):
@@ -367,7 +393,8 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
-    plt.savefig("LowerOcean",dpi=300)
+    plt.tight_layout()
+    plt.savefig(fn+"LowerOcean",dpi=300)
     plt.show()
     # lower ocean compartment concentrations in mg/m3 (last simulation year)
     for i in range(m.nocells):
@@ -375,23 +402,29 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.title('Alt Deniz Kompartmanı (Son yıl)')
     plt.ylabel('Konsantrasyon (mg/m3)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
+    plt.tight_layout()
     plt.show()
     # sediment compartment concentrations in mg/kg
     for i in range(m.nocells):
-        plt.plot(out[3]['mg_per_kg'][i][1:])
+        plt.plot(out[3]['sed_mg_per_kg'][i][1:])
     plt.title('Sediment Kompartmanı')
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/kg)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
-    plt.savefig("Sediment",dpi=300)
+    plt.tight_layout()
+    plt.savefig(fn+"Sediment",dpi=300)
     plt.show()
     # sediment compartment concentrations in mg/kg (last simulation year)
     for i in range(m.nocells):
-        plt.plot(out[3]['mg_per_kg'][i][timesteps-12:])
+        plt.plot(out[3]['sed_mg_per_kg'][i][timesteps-12:])
+        print("cell:",i)
+        print(out[3]['sed_mg_per_kg'][i][timesteps-12:])
     plt.title('Sediment Kompartmanı')
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/kg)')
     plt.legend(["Merkez Baseni","Doğu Baseni"])
+    plt.tight_layout()
+    plt.savefig(fn+"Sediment_lastYear",dpi=300)
     plt.show()
     # Central Basin concentrations in mg/m3
     plt.plot(out[1]['mg_per_m3'][0][1:])
@@ -400,6 +433,7 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Üst Deniz","Alt Deniz"])
+    plt.tight_layout()
     plt.show()
     # Central Basin concentrations in mg/m3 (last simulation year)
     plt.plot(out[1]['mg_per_m3'][0][timesteps-12:])
@@ -408,6 +442,7 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Üst Deniz","Alt Deniz"])
+    plt.tight_layout()
     plt.show()
     # Eastern Basin concentrations in mg/m3
     plt.plot(out[1]['mg_per_m3'][1][1:])
@@ -416,6 +451,7 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Üst Deniz","Alt Deniz"])
+    plt.tight_layout()
     plt.show()
     # Eastern Basin concentrations in mg/m3 (last simulation year)
     plt.plot(out[1]['mg_per_m3'][1][timesteps-12:])
@@ -424,6 +460,7 @@ def write_output_dyn_QWASI(m, fn, units):
     plt.xlabel('Aylar')
     plt.ylabel('Konsantrasyon (mg/m^3)')
     plt.legend(["Üst Deniz","Alt Deniz"])
+    plt.tight_layout()
     plt.show()
     if m.chemdict['Name'] == "BaP": # Measured values for BaP are used below
         # Central Basin Upper Ocean (model vs. measured)
@@ -433,7 +470,8 @@ def write_output_dyn_QWASI(m, fn, units):
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/m^3)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Central_Upper",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Central_Upper",dpi=300)
         plt.show()
         # Central Basin Lower Ocean (model vs. measured)
         plt.plot(linspace(1,12,12),out[2]['mg_per_m3'][0][timesteps-12:])
@@ -442,7 +480,8 @@ def write_output_dyn_QWASI(m, fn, units):
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/m^3)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Central_Lower",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Central_Lower",dpi=300)
         plt.show()
         # Eastern Basin Upper Ocean (model vs. measured)
         plt.plot(linspace(1,12,12),out[1]['mg_per_m3'][1][timesteps-12:])
@@ -451,7 +490,8 @@ def write_output_dyn_QWASI(m, fn, units):
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/m^3)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Eastern_Upper",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Eastern_Upper",dpi=300)
         plt.show()
         # Eastern Basin Lower Ocean (model vs. measured)
         plt.plot(linspace(1,12,12),out[2]['mg_per_m3'][1][timesteps-12:])
@@ -460,25 +500,28 @@ def write_output_dyn_QWASI(m, fn, units):
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/m^3)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Eastern_Lower",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Eastern_Lower",dpi=300)
         plt.show()
         # Central Basin sediment compartment concentrations (model vs. measured)
-        plt.plot(linspace(1,12,12),out[3]['mg_per_kg'][0][timesteps-12:])
+        plt.plot(linspace(1,12,12),out[3]['sed_mg_per_kg'][0][timesteps-12:])
         plt.plot([2],[1.8E-01],'o')
         plt.title('Merkez Baseni - Sediment Kompartmanı')
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/kg)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Central_sediment",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Central_sediment",dpi=300)
         plt.show()
         # Eastern Basin sediment compartment concentrations (model vs. measured)
-        plt.plot(linspace(1,12,12),out[3]['mg_per_kg'][1][timesteps-12:])
-        plt.plot([2,12],[3.74E-02,1.93E-01],'o')
+        plt.plot(linspace(1,12,12),out[3]['sed_mg_per_kg'][1][timesteps-12:])
+        plt.plot([2,12],[3.84E-02,1.93E-01],'o')
         plt.title('Doğu Baseni - Sediment Kompartmanı')
         plt.xlabel('Aylar')
         plt.ylabel('Konsantrasyon (mg/kg)')
         plt.legend(["Model","Ölçüm"])
-        plt.savefig("Eastern_sediment",dpi=300)
+        plt.tight_layout()
+        plt.savefig(fn+"Eastern_sediment",dpi=300)
         plt.show()
     
 

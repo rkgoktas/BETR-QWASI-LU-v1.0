@@ -36,7 +36,7 @@ years = [list(range(1,20))]*len(runID)    # range of modeling run (years)
 
 #emisdir = ['Emission_BDE209_10_comparts']  # emission inventory ('Emissions/annual/')
 emisfile = ['Emission_BaP.txt']*len(runID) # emission inventory ('Emissions/')
-seasparfile = ['seasonal_parameters_QWASI_2BasinIzmit_const.txt']*len(runID)#  seasonally varying parameters ('Environment/)
+seasparfile = ['seasonal_parameters_QWASI_2BasinIzmit.txt']*len(runID)#  seasonally varying parameters ('Environment/)
 constparfile = ['const_parameters_QWASI_2BasinIzmit.txt']*len(runID)  # seasonally constant parameters ('Environment/')
 flowdirectory = ['QWASI_2BasinIzmit_Layered']*len(runID)  # flows in the atmosphere, ocean and fresh water ('Flows/)
 
@@ -137,5 +137,5 @@ for i in range(0, len(runID)):
     print('TOTAL SIMULATION TIME: %f minutes = %f hours.' % ( (t_e - t_s) / 60.0 , (t_e - t_s) / 3600.0 ))
     
     # Plotting the results
-    m.output_dyn_QWASI(filename = 'OUT', units = ['mol', 'Pa', 'mol_per_m3', 'ng_per_m3', 'mg_per_m3', 'mg_per_kg'] )  
+    m.output_dyn_QWASI(filename = 'OUT', units = ['mol', 'Pa', 'mol_per_m3', 'ng_per_m3', 'mg_per_m3', 'mg_per_kg', 'sed_ng_per_g', 'sed_mg_per_kg'] )  
     

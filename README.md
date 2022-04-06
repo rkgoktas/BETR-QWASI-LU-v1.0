@@ -1,2 +1,0 @@
-# BETR-QWASI-LU
-

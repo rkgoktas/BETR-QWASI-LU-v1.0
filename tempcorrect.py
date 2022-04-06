@@ -32,19 +32,19 @@ def tempcorrect(par, compdict, chem):
 
     chem_spatial_dict={}
     for k in list(compdict.keys()):
-        print("in tempcorrect: k = ", k) # RKG
+        #print("in tempcorrect: k = ", k) # RKG
         ## initialize record-array
         pa=zeros(par.shape, dtype=dtype([('k_reac','f8'), ('Kaw','f8'),
                                               ('Koa','f8'),('Kow','f8')]))
         tempfield=par[compdict[k]['temp_variable']]
-        print("in tempcorrect: tempfield = ", tempfield) # RKG, 03.12.2021
+        #print("in tempcorrect: tempfield = ", tempfield) # RKG, 03.12.2021
         t0=chem['T0']
-        print("in tempcorrect: t0 = ", t0) # RKG, 03.12.2021
+        #print("in tempcorrect: t0 = ", t0) # RKG, 03.12.2021
         ## reaction rate (1/h)
         kreac0=log(2)/chem[compdict[k]['halflife_variable']]
-        print("in tempcorrect: kreac0 = ", kreac0) # RKG, 03.12.2021
+        #print("in tempcorrect: kreac0 = ", kreac0) # RKG, 03.12.2021
         ea=chem[compdict[k]['EA_variable']] # J/mol  
-        print("in tempcorrect: ea = ", type(ea), ea) # RKG, 03.12.2021
+        #print("in tempcorrect: ea = ", type(ea), ea) # RKG, 03.12.2021
         #print("in tempcorrect: R = ", R) # RKG, 03.12.2021
         pa['k_reac']= kreac0*exp(ea/R*(1/t0-1/tempfield))
         ## partitioning coefficients

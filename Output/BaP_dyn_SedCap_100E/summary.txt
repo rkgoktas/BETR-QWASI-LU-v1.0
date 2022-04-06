@@ -1,0 +1,12 @@
+"BETR-QWASI-LU v1.0"
+runID BaP_dyn_SedCap_100E
+seasfile seasonal_parameters_QWASI_2BasinIzmit_const.txt
+chemdata chemicals_PAH.txt
+chemnr 13
+compfile compartments_QWASI.txt
+constparfile const_parameters_QWASI_2BasinIzmit.txt
+flowdirectory QWASI_2BasinIzmit_Layered_ConstFlow
+procfile processes_QWASI.txt
+contfile control_QWASI.txt
+emisfile Emission_BaP_const.txt
+solvfile Solver\solvparams_default.txt

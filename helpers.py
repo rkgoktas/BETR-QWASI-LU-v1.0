@@ -56,8 +56,8 @@ def compressmat(A, killidx):
 
 def compressvec(v, killidx):
     """ Takes vector v and returns weeded vector"""
-    print("in compressvec: killidx = ", killidx, size(killidx))
-    print("in compressvec: v = ", v)
+    #print("in compressvec: killidx = ", killidx, size(killidx))
+    #print("in compressvec: v = ", v)
     if size(killidx) == 0: ## this if statement was added by RKG, 07.12.2021
         return v
     vw = delete(v, killidx)

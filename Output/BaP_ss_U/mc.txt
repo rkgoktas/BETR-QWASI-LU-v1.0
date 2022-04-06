@@ -1,0 +1,76 @@
+INPUT PARAMETERS
+fp1 k = 3
+95% Confidence Intervals:
+Central basin: 3.47e-06 - 2.76e-05
+Eastern basin: 3.06e-06 - 2.43e-05
+fp2 k = 3
+95% Confidence Intervals:
+Central basin: 7.24e-06 - 4.35e-05
+Eastern basin: 7.05e-06 - 4.24e-05
+partsett k = 3
+95% Confidence Intervals:
+Central basin: 2.96e-08 - 3.27e-07
+Eastern basin: 2.96e-08 - 3.27e-07
+seddep k = 3
+95% Confidence Intervals:
+Central basin: 3.03e-08 - 2.45e-07
+Eastern basin: 3.03e-08 - 2.45e-07
+focs7 k = 1.5
+95% Confidence Intervals:
+Central basin: 2.13e-02 - 4.45e-02
+Eastern basin: 2.93e-02 - 6.12e-02
+fs7 k = 3
+95% Confidence Intervals:
+Central basin: 5.12e-02 - 5.39e-01
+Eastern basin: 5.12e-02 - 5.39e-01
+rhos7 k = 1.5
+95% Confidence Intervals:
+Central basin: 9.63e+02 - 2.16e+03
+Eastern basin: 9.63e+02 - 2.16e+03
+sedburial k = 3
+95% Confidence Intervals:
+Central basin: 1.68e-08 - 1.27e-07
+Eastern basin: 1.68e-08 - 1.27e-07
+sedresup k = 3
+95% Confidence Intervals:
+Central basin: 1.39e-08 - 1.42e-07
+Eastern basin: 1.39e-08 - 1.42e-07
+h7 k = 2
+95% Confidence Intervals:
+Central basin: 1.39e-02 - 5.83e-02
+Eastern basin: 1.39e-02 - 5.83e-02
+tair2 k = 1.1
+95% Confidence Intervals:
+Central basin: 2.61e+02 - 3.18e+02
+Eastern basin: 2.61e+02 - 3.18e+02
+Gup k = 3
+95% Confidence Intervals:
+Central basin: 1.65e+06 - 1.06e+07
+Eastern basin: 0.00e+00 - 0.00e+00
+Glow k = 3
+95% Confidence Intervals:
+Central basin: 2.39e+06 - 1.55e+07
+Eastern basin: 0.00e+00 - 0.00e+00
+logKaw k = 1.5
+95% Confidence Intervals:
+Central basin: -4.88e+00 - -4.53e+00
+Eastern basin: -4.88e+00 - -4.53e+00
+logKow k = 1.1
+95% Confidence Intervals:
+Central basin: 5.41e+00 - 6.49e+00
+Eastern basin: 5.41e+00 - 6.49e+00
+halflife_sediment k = 3
+95% Confidence Intervals:
+Central basin: 1.74e+04 - 1.25e+05
+Eastern basin: 1.74e+04 - 1.25e+05
+---------------------------------
+OUTPUT PARAMETERS
+95% Confidence Intervals:
+Upper Ocean (mg/m^3):
+Central basin: 3.62e-03 - 9.48e-03Eastern basin: 1.70e-02 - 2.37e-02
+Lower Ocean (mg/m^3):
+Central basin: 1.73e-03 - 7.07e-03
+Eastern basin: 9.94e-03 - 1.58e-02
+Sediment (mg/kg):
+Central basin: 1.14e-02 - 1.19e-01
+Eastern basin: 6.54e-02 - 3.92e-01

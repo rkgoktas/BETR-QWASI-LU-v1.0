@@ -36,15 +36,21 @@ def mkflowmat(m):
     # remove intra-cell flows
     # this is for example oceanic sinking flux, which is dealt with
     # by "betr_ocean_sinkflux" in "processes.py".
-    print("in mkflowmat: fdict = ", fdict) #added by RKG, 07.12.2021
-    print("in mkflowmat: fdict,items() = ", fdict.items()) #added by RKG, 07.12.2021
-    for [k,v] in fdict.items():
-        print("in mkflowmat: [k,v] = ", [k,v]) #added by RKG, 07.12.2021
-        print("in mkflowmat: v = ", type(v), size(v), v) #added by RKG, 07.12.2021
-        intercell=list(where(v[:,0]!=v[:,1])[0])
-        intracell=list(where(v[:,0]==v[:,1])[0])
-        fdict[k]=v[intercell,:]
-     # construct list of large sparse matrices
+    #print("in mkflowmat: fdict = ", fdict) #added by RKG, 07.12.2021
+    #print("in mkflowmat: fdict,items() = ", fdict.items()) #added by RKG, 07.12.2021
+    # DO NOT REMOVE INTRA-CELL FLOWS!!!... modification by RKG, 14.03.2022
+    #for [k,v] in fdict.items():
+    #    print("in mkflowmat: [k,v] = ", [k,v]) #added by RKG, 07.12.2021
+    #    print("in mkflowmat: v = ", type(v), size(v), v) #added by RKG, 07.12.2021
+    #    intercell=list(where(v[:,0]!=v[:,1])[0])
+    #    print("intercell =", intercell) #added by RKG, 14.03.2022
+    #    intracell=list(where(v[:,0]==v[:,1])[0])
+    #    print("intracell =", intracell) #added by RKG, 14.03.2022
+    #    fdict[k]=v[intercell,:]
+    #print("after processing fdict in mkflowmat:")
+    #print("in mkflowmat: fdict = ", fdict) #added by RKG, 14.03.2022
+    #print("in mkflowmat: fdict,items() = ", fdict.items()) #added by RKG, 14.03.2022
+     # construct list of large sparse matrices 
     matlist=[]
     for t in arange(0,m.nots):
         matlist.append(sp.coo_matrix(matrix(zeros((m.matdim,m.matdim),

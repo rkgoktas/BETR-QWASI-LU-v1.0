@@ -1,0 +1,2 @@
+Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
+AcN 300 73253.5 244.178 10.1741

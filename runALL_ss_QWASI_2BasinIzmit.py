@@ -101,7 +101,7 @@ for i in range(0, len(runID)):
         m.output_end_txt(filename = 'endstate.txt' + str(years[i][0]) + '.txt')
     result = m.ss_res
     m.ss_res = result
-    m.output_ss_QWASI(filename = 'ss', units = ['mol_per_m3', 'Pa','ng_per_m3', 'diss_ng_per_L', 'part_ng_per_mg', 'sed_ng_per_g'], cpk = True)
+    m.output_ss_QWASI(filename = 'ss', units = ['mol_per_m3', 'Pa','ng_per_m3', 'diss_ng_per_L', 'part_ng_per_mg', 'sed_ng_per_g', 'mg_per_kg'], cpk = True)
     m.output_ss_txt(filename = 'ss.txt')
 
     if track_fluxes:

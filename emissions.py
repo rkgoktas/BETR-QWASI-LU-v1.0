@@ -50,7 +50,7 @@ class Emission:
         emvec=zeros(m.matdim)
         try:
             ems=self.em[timeidx+1]
-            print("in get_emission: ems =", ems)
+            #print("in get_emission: ems =", ems)
             for source in ems:
                 # Fangyuan's code below is commented out.
                 # BETR-QWASI modification is made below. RKG, SC, 24.11.2021 
@@ -68,9 +68,9 @@ class Emission:
                 cell10 = tocell(source[0],source[10],m); emvec[cell10]=source[20]
                 """
                 # Emission vector created for BETR-QWASI. RKG, SC, 24.11.2021
-                print("in get_emission: source =", source)
+                #print("in get_emission: source =", source)
                 cell1 = tocell(source[0],source[1],m); emvec[cell1]=source[4]
-                print("in get_emission: cell1 =", cell1)                 
+                #print("in get_emission: cell1 =", cell1)                 
                 cell2 = tocell(source[0],source[2],m); emvec[cell2]=source[5] 
                 cell3 = tocell(source[0],source[3],m); emvec[cell3]=source[6]
                 

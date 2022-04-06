@@ -14,10 +14,10 @@ import copy
 
 def mkflowD(model):
     fdict=copy.deepcopy(model.flowdict)
-    print("in mkflowD: fdict = ", fdict) # RKG, 03.12.2001
+    #print("in mkflowD: fdict = ", fdict) # RKG, 03.12.2001
     for f in fdict.keys():
-        print("in mkflowD: f = ", f) # RKG, 07.12.2001
-        print("in mkflowD: fdict[f] = ", type(fdict[f]), shape(fdict[f]), fdict[f]) # RKG, 07.12.2001
+        #print("in mkflowD: f = ", f) # RKG, 07.12.2001
+        #print("in mkflowD: fdict[f] = ", type(fdict[f]), shape(fdict[f]), fdict[f]) # RKG, 07.12.2001
         try: ## try-except added by RKG, 07.12.2021
             fromcells=fdict[f][:,0].astype(int)
             zvals=model.zdict[f[0]]['bulk'][fromcells-1,:]

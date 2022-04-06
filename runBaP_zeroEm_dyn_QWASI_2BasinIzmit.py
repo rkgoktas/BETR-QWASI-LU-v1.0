@@ -138,5 +138,5 @@ for i in range(0, len(runID)):
     print('TOTAL SIMULATION TIME: %f minutes = %f hours.' % ( (t_e - t_s) / 60.0 , (t_e - t_s) / 3600.0 ))
     
     # Plotting the results
-    m.output_dyn_QWASI(filename = 'OUT', units = ['mol', 'Pa', 'mol_per_m3', 'ng_per_m3', 'mg_per_m3', 'mg_per_kg'] )  
+    m.output_dyn_QWASI(filename = 'OUT', units = ['mol', 'Pa', 'mol_per_m3', 'ng_per_m3', 'mg_per_m3', 'mg_per_kg', 'sed_mg_per_kg'] )  
     

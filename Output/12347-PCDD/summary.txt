@@ -1,0 +1,11 @@
+"BETR-QWASI-LU v1.0"
+runID 12347-PCDD
+seasfile seasonal_parameters_QWASI_2BasinIzmit.txt
+chemdata chemicals.txt
+chemnr 22
+compfile compartments_QWASI.txt
+constparfile const_parameters_QWASI_2BasinIzmit.txt
+flowdirectory QWASI_2BasinIzmit_Layered
+procfile processes_QWASI.txt
+contfile control_QWASI.txt
+emisfile Emission_QWASI_100.txt

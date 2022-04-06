@@ -1,0 +1,12 @@
+"BETR-QWASI-LU v1.0"
+runID Kri_dyn_deprem_high_QWASI_2BasinIzmit
+seasfile seasonal_parameters_QWASI_2BasinIzmit_deprem.txt
+chemdata chemicals_PAH.txt
+chemnr 10
+compfile compartments_QWASI.txt
+constparfile const_parameters_QWASI_2BasinIzmit.txt
+flowdirectory QWASI_2BasinIzmit_Layered_deprem
+procfile processes_QWASI.txt
+contfile control_QWASI.txt
+emisfile Emission_Kri_const_sed_high.txt
+solvfile Solver\solvparams_default.txt

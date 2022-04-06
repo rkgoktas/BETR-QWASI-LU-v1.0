@@ -1,0 +1,2 @@
+Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
+BaP 300 789966 2633.22 109.718

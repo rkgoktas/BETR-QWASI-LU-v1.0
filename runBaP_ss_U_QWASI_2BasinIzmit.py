@@ -108,8 +108,8 @@ for i in range(0, len(runID)):
             m.output_end_txt(filename = 'endstate.txt' + str(years[i][0]) + '.txt')
         result = m.ss_res
         m.ss_res = result
-        m.output_ss_QWASI(filename = 'ss', units = ['mol_per_m3', 'Pa','ng_per_m3', 'mg_per_m3', 'mg_per_kg','diss_ng_per_L', 'part_ng_per_mg', 'sed_ng_per_g'], cpk = True)
-        m.output_ss_txt(filename = 'ss.txt')
+        m.output_ss_QWASI(filename = 'ss', units = ['mol_per_m3', 'Pa','ng_per_m3', 'mg_per_m3', 'mg_per_kg','diss_ng_per_L', 'part_ng_per_mg', 'sed_ng_per_g', 'sed_mg_per_kg'], cpk = True)
+        #m.output_ss_txt(filename = 'ss.txt')
             
         if monte_carlo: # store input params for this Monte Carlo iteration
             for param_name in u_envpar.keys():
@@ -122,7 +122,7 @@ for i in range(0, len(runID)):
         
         output_params[1].append(result[1]['mg_per_m3'])
         output_params[2].append(result[2]['mg_per_m3'])
-        output_params[3].append(result[3]['mg_per_kg'])
+        output_params[3].append(result[3]['sed_mg_per_kg'])
     
     # Summarizing Monte Carlo simulation results
     if monte_carlo:
@@ -242,8 +242,8 @@ for i in range(0, len(runID)):
         r1 = sr_display(all_dfs[0])
         r2 = sr_display(all_dfs[1])
         
-        r1 = sr2_display(all_dfs[0], list(output_params.keys()), list(input_params.keys()), "sr2_merkez.png")
-        r2 = sr2_display(all_dfs[1], list(output_params.keys()), list(input_params.keys()), "sr2_doğu.png")
+        r1 = sr2_display(all_dfs[0], list(output_params.keys()), list(input_params.keys()), 'Output/' + runID[i] + '/' + "sr2_merkez.png")
+        r2 = sr2_display(all_dfs[1], list(output_params.keys()), list(input_params.keys()), 'Output/' + runID[i] + '/' + "sr2_doğu.png")
  
  
                 

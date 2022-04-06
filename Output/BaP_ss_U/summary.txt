@@ -1,0 +1,11 @@
+"BETR-QWASI-LU v1.0"
+runID BaP_ss_U
+seasfile seasonal_parameters_QWASI_2BasinIzmit.txt
+chemdata chemicals_PAH.txt
+chemnr 13
+compfile compartments_QWASI.txt
+constparfile const_parameters_QWASI_2BasinIzmit.txt
+flowdirectory QWASI_2BasinIzmit_Layered
+procfile processes_QWASI.txt
+contfile control_QWASI.txt
+emisfile emission_BaP.txt

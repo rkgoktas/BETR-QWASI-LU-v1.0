@@ -257,11 +257,11 @@ for i in range(0, len(runID)):
             
         
 
-    t_e = time.time() # End time
+t_e = time.time() # End time
 
-    print('\nSimulation completed!')
-    print(runID)
-    print('TOTAL SIMULATION TIME: %f minutes = %f hours.' % ( (t_e - t_s) / 60.0 , (t_e - t_s) / 3600.0 ))
+print('\nSimulation completed!')
+print(runID)
+print('TOTAL SIMULATION TIME: %f minutes = %f hours.' % ( (t_e - t_s) / 60.0 , (t_e - t_s) / 3600.0 ))
     
 
            

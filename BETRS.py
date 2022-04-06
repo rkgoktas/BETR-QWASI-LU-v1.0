@@ -141,7 +141,7 @@ class Model():
         ## read compartment descriptions
         fn=os.path.join('Environment', compartmentfile)
         self.update_compartments(fn)
-        print("compdict:", self.compdict)
+        #print("compdict:", self.compdict)
         ## read flows of transport media
         directory=os.path.join('Flows', flowdir)
         self.update_flows(directory)
@@ -171,10 +171,10 @@ class Model():
         ## Calculate chemical properties in all cells at all timesteps
         #print("killidx = ", self.killidx) # RKG, 07.12.2021
         self.update_chempardict() #self.chempardict
-        print("chempardict:", self.chempardict)
+        #print("chempardict:", self.chempardict)
         ## Calculate z-values [self.zdict]
         self.update_zvalues() 
-        print("zdict:", self.zdict)
+        #print("zdict:", self.zdict)
         ## calculate D-values for intra-cell processes [self.Dproc]
         self.update_dvalues_process()
         ## calculate D-values for flow in transport media [self.Dflow]
@@ -560,7 +560,7 @@ class Model():
         fn=os.path.join('Output',self.run,filename)
         write_output_dyn(self,fn,units,netcdf,cpk)
         
-    def output_dyn_QWASI(self,filename='dyn_QWASI',units=['mol']):  # new function added by RKG for QWASI, 17.12.2021
+    def output_dyn_QWASI(self,filename='dyn_QWASI',units=['mol'], cpk=True):  # new function added by RKG for QWASI, 17.12.2021
         """
         :param string filename: Prefix of the output file(s). The output files
                                 will be written to Output/<run>/<filename>_x.
@@ -571,7 +571,7 @@ class Model():
         """
         ## filename without extension (automatically generated from filetype)
         fn=os.path.join('Output',self.run,filename)
-        write_output_dyn_QWASI(self,fn,units)
+        write_output_dyn_QWASI(self,fn,units,cpk)
         
     def output_se(self,
                   filename='sec_em',

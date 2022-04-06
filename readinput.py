@@ -38,9 +38,9 @@ def _readEnvironment(partype, fn):
     if partype == 'const':    
         dt=['int']+(len(header)-1)*['f8']
         pars=loadtxt(fn, dtype={'names':header, 'formats':dt}, comments='#')
-        print("in _readEnvironment: pars = ",type(pars),size(pars), pars) # RKG, 03.12.2021
+        #print("in _readEnvironment: pars = ",type(pars),size(pars), pars) # RKG, 03.12.2021
         cells=unique(pars['CELL']).shape[0] #number of cells read
-        print("in _readEnvironment: cells =", type(cells), cells)
+        #print("in _readEnvironment: cells =", type(cells), cells)
         ## remove field 'CELL' and sort according to increasing cell number
         try: ## try-except added by RKG, 03.12.2021
             pars=sort(pars,axis=0,order=['CELL'])
@@ -211,7 +211,7 @@ def readControl(controlfile):
         if line == '': break
         if line[0] =='#' or line == '\n': continue
         line=line.split()
-        print("in readControl: line = ", line) # RKG, 03.12.2021
+        #print("in readControl: line = ", line) # RKG, 03.12.2021
         controldict[line[0]]=line[1]
     f.close()
     return(controldict)

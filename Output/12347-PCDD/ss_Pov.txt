@@ -1,0 +1,2 @@
+Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
+12347-PCDD 300 745513 2485.04 103.543

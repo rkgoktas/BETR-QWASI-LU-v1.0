@@ -8,7 +8,7 @@ The [Python 3.0 patch of BETR-Global 4.0](https://github.com/barronh/BETR-Global
 
 
 
-You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/files/8186243/BETR-QWASI-LU_documentation.pdf).
+You may download BETR-QWASI-LU-v1.0 documentation in pdf format from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/blob/main/Documentation/BETR-QWASI-LU_ModelDocumentation.pdf).
 
 You may download BETR-QWASI-LU-v1.0 source code and environmental data sets from [here](https://github.com/rkgoktas/BETR-QWASI-LU-v1.0/tree/main). 
 

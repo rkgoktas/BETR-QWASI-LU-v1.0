@@ -1,2 +1,0 @@
-Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
-BkFlA 300 696220 2320.73 96.6973

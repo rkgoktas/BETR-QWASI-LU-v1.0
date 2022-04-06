@@ -1,2 +1,0 @@
-Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
-BaA 300 676255 2254.18 93.9243

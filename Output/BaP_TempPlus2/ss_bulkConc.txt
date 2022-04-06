@@ -1,4 +1,0 @@
-                     Central Eastern
-Comp 1 (mg_per_m3): 6.36e-03 2.05e-02
-Comp 2 (mg_per_m3): 4.05e-03 1.24e-02
-Comp 3 (mg_per_kg): 1.10e-02 4.31e-02

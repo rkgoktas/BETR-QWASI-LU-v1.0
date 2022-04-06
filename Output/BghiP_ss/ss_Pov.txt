@@ -1,2 +1,0 @@
-Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
-BghiP 300 1.08852e+06 3628.41 151.184

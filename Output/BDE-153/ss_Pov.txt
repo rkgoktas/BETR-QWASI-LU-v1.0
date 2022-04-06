@@ -1,2 +1,0 @@
-Chem TotalEmissions_mol_per_h Total_Mass_mol  Pov_hours Pov_days
-BDE-153 300 2.00753e+06 6691.75 278.823

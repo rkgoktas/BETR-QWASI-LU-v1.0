@@ -15,7 +15,7 @@ SET OPTIONS FOR THE FAST SOLVER AND THE FLUX_INTEGRATION AND
 PRIMARY/SECONDARY_EMISSION MODE
 """
 monte_carlo = True # SWITCH ON/OFF MONTE CARLO SIMULATIONS, RKG, 20.01.2022
-mc_iter = 100    # assign the number of Monte Carlo iterations, RKG, 20.01.2022
+mc_iter = 10000    # assign the number of Monte Carlo iterations, RKG, 20.01.2022
 use_odespy = False       #SWITCH ON/OFF FAST SOLVER
 track_fluxes = False    #SWITCH ON/OFF FLUX INTEGRATION
 track_se = False         #SWICH ON/OFF TRACKING OF SECONDARY EMISSIONS
